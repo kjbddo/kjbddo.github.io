@@ -687,3 +687,8 @@ tbody th { color: var(--ink); font-weight: 700; }
   a { color: inherit; text-decoration: none; }
   .bar > span, .dg-green, .dg-pill, .pcs__grid > div:last-child, .pcs__result, .hero__stats dd::after, code { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* 발표 구성도 이미지 */
+.diagram--img img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:12px; background:#fff; }
+.diagram--img a { display:block; }
+@media print { .diagram--img img { border:none; } }

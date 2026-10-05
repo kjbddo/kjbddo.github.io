@@ -371,6 +371,20 @@
       </div>
       <figcaption><strong class="diagram__key">클러스터에 닿는 것은 Argo CD뿐. 앱 CI에는 kubeconfig가 없다.</strong><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 B — 3저장소 배포 흐름.</strong> 앱 · 인프라 · GitOps 저장소가 각자의 경로로만 AWS에 닿습니다.</figcaption>
     </figure>
+    <h3>발표 자료의 구성도</h3>
+    <figure class="diagram diagram--img wide">
+      <a href="assets/arch_emr.jpg" target="_blank" rel="noopener"><img src="assets/arch_emr.jpg" alt="AWS 메인 인프라 구성도: NAT 없는 VPC, 가용 영역 3개, EKS 노드 풀, VPC 엔드포인트 14개, 데이터 계층, Datadog PrivateLink, DMS로 GCP 복제" loading="lazy"></a>
+      <figcaption><strong>AWS 메인 인프라.</strong> CloudFront·WAF → VPC Origin → 내부 ALB → 프라이빗 EKS. 가용 영역 3개에 VPC 엔드포인트 14종, 데이터 계층은 RDS·ElastiCache·Amazon MQ·EFS. 관측은 Datadog PrivateLink, DR 복제는 DMS → Cloud SQL. 그림을 누르면 원본 크기로 열립니다.</figcaption>
+    </figure>
+    <figure class="diagram diagram--img wide">
+      <a href="assets/arch_gcp.jpg" target="_blank" rel="noopener"><img src="assets/arch_gcp.jpg" alt="GCP DR 인프라 구성도: HA VPN, GKE, Cloud SQL 복제본, Memorystore, Filestore, Artifact Registry, Developer Connect" loading="lazy"></a>
+      <figcaption><strong>GCP DR 인프라(Pilot Light, 팀원과 공동).</strong> 평시에는 VPC·HA VPN·Cloud SQL 복제만 켜 두고, GKE·Redis·Filestore는 DR 선언 뒤 만듭니다. AWS가 멈춰도 쓸 수 있도록 이미지·차트·시크릿은 GCP에 미리 둡니다.</figcaption>
+    </figure>
+    <figure class="diagram diagram--img wide">
+      <a href="assets/arch_cluster.jpg" target="_blank" rel="noopener"><img src="assets/arch_cluster.jpg" alt="클러스터 안 서비스 구조: 내부 ALB → frontend·spring-boot·xraygraph, RabbitMQ 큐로 prescription·validation·certificate·llm-gateway 연결" loading="lazy"></a>
+      <figcaption><strong>클러스터 안 서비스 구조.</strong> 경로 3개(/, /api, /storage)로 나뉘고, AI 작업은 RabbitMQ 큐로 넘어가 202 응답 뒤 폴링합니다. 모든 LLM 호출은 llm-gateway 한 곳을 거쳐 Bedrock으로 나갑니다.</figcaption>
+    </figure>
+
 
     <h3>한 일</h3>
     <ul class="work-list cols-2 wide">
@@ -555,6 +569,12 @@
       </div>
       <figcaption><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 C — 확정 구조.</strong> 그린으로 표시한 ALB ~ Auto Scaling Group 구간이 담당 영역입니다.</figcaption>
     </figure>
+    <h3>발표 자료의 구성도</h3>
+    <figure class="diagram diagram--img wide">
+      <a href="assets/arch_staybook.jpg" target="_blank" rel="noopener"><img src="assets/arch_staybook.jpg" alt="Staybook 3-tier 구성도: Route 53 → CloudFront → ALB → WAS Auto Scaling Group → ElastiCache·Aurora Multi-AZ" loading="lazy"></a>
+      <figcaption><strong>Staybook 전체 구성.</strong> Route 53 → CloudFront(정적은 S3, API는 ALB) → WAS Auto Scaling Group(2 AZ) → ElastiCache·Aurora Multi-AZ. 제가 맡은 WAS 계층은 가운데 ALB·ASG·보안그룹 체인입니다.</figcaption>
+    </figure>
+
 
     <h3>부하 테스트로 정한 기준</h3>
     <p>WAS를 t2.nano → t3.nano → t3.small로 바꿔 가며 8회 이상 구축하고, k6 · CloudWatch · Grafana로 측정했습니다.</p>
