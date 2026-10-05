@@ -545,7 +545,7 @@ tbody th { color: var(--ink); font-weight: 700; }
 .site-footer .chapter-no { color: var(--hero-ink); }
 .site-footer .chapter-no span { color: var(--hero-green); }
 .site-footer .chapter-head h2 { color: var(--hero-ink); }
-.site-footer__cols { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 72px; }
+.site-footer__cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) minmax(0, 0.8fr); gap: 48px; }
 .site-footer h3 { font-size: 14px; font-weight: 700; letter-spacing: .08em; color: var(--hero-green); padding-bottom: 14px; border-bottom: 1px solid var(--hero-line); }
 .site-footer .plain-list li { border-bottom-color: var(--hero-line); color: var(--hero-ink); }
 .site-footer .when { display: block; color: var(--hero-muted); font-size: 14.5px; }
