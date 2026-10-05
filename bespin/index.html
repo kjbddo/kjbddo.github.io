@@ -150,8 +150,8 @@
       <section class="skills__side" aria-labelledby="sk-lab">
         <h3 id="sk-lab">교육과정 실습</h3>
         <ul class="plain-list">
-          <li>Jenkins — EC2 설치, Jenkinsfile 선언형 파이프라인으로 빌드 → S3 배포</li>
-          <li>AWS CodeBuild · CodePipeline · CodeDeploy — Blue/Green 배포</li>
+          <li>Jenkins: EC2 설치, Jenkinsfile 선언형 파이프라인으로 빌드 → S3 배포</li>
+          <li>AWS CodeBuild · CodePipeline · CodeDeploy: Blue/Green 배포</li>
           <li>GCP · Azure 기초</li>
         </ul>
       </section>
@@ -222,7 +222,7 @@
     <figure class="diagram wide">
       <div class="diagram__scroll" role="group" aria-label="다이어그램 A">
         <svg class="dg dg--a" viewBox="0 0 1140 534" role="img" aria-labelledby="dgA-title dgA-desc">
-          <title id="dgA-title">다이어그램 A — 폐쇄망 구조</title>
+          <title id="dgA-title">다이어그램 A: 폐쇄망 구조</title>
           <desc id="dgA-desc">VPC 밖의 사용자는 CloudFront와 WAF를 거쳐 VPC origin으로 내부 ALB에 닿는다. VPC 안에는 내부 ALB와 Bastion, 3개 가용 영역의 Private App 서브넷에 private endpoint만 가진 EKS와 Karpenter 노드(general, AI 전용 taint)가 있고, Private Data 서브넷에 RDS Multi-AZ, ElastiCache, Amazon MQ, EFS가 있다. VPC 경계에는 인터페이스 엔드포인트 14종과 S3 게이트웨이가 있다. NAT, Public 서브넷, 기본 경로는 없다. 운영자는 SSM Session Manager로 Bastion에 접속하고, Bastion 역할의 EKS access entry로 클러스터에 접근한다.</desc>
           <defs>
             <marker id="dgA-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head"/></marker>
@@ -302,7 +302,7 @@
           </g>
         </svg>
       </div>
-      <figcaption><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 A — 폐쇄망 구조.</strong> 인터페이스 엔드포인트 14종과 S3 게이트웨이는 VPC 경계에 있습니다.</figcaption>
+      <figcaption><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 A: 폐쇄망 구조.</strong> 인터페이스 엔드포인트 14종과 S3 게이트웨이는 VPC 경계에 있습니다.</figcaption>
     </figure>
 
     <h3>3저장소 배포 흐름</h3>
@@ -311,7 +311,7 @@
     <figure class="diagram wide">
       <div class="diagram__scroll" role="group" aria-label="다이어그램 B">
         <svg class="dg dg--b" viewBox="0 24 1070 452" role="img" aria-labelledby="dgB-title dgB-desc">
-          <title id="dgB-title">다이어그램 B — 3저장소 배포 흐름</title>
+          <title id="dgB-title">다이어그램 B: 3저장소 배포 흐름</title>
           <desc id="dgB-desc">앱 저장소의 CI는 이미지를 빌드해 ECR에 게시하고 GitOps 저장소에 PR을 올린다. 앱 CI에는 kubeconfig가 없다. GitOps 저장소는 Helm 차트 1개로 앱 12개를 app-of-apps로 정의하고, AWS 관리형 Argo CD가 CodeConnections로 읽어 EKS에 반영한다. 인프라 저장소의 CI는 OIDC로 Terraform plan을 검증하고 저장된 plan을 배포한다. 클러스터에 닿는 것은 Argo CD뿐이다.</desc>
           <defs>
             <marker id="dgB-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head"/></marker>
@@ -369,7 +369,7 @@
           <line x1="690" y1="414" x2="813" y2="414" class="dg-line" marker-end="url(#dgB-arr)"/>
         </svg>
       </div>
-      <figcaption><strong class="diagram__key">클러스터에 닿는 것은 Argo CD뿐. 앱 CI에는 kubeconfig가 없다.</strong><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 B — 3저장소 배포 흐름.</strong> 앱 · 인프라 · GitOps 저장소가 각자의 경로로만 AWS에 닿습니다.</figcaption>
+      <figcaption><strong class="diagram__key">클러스터에 닿는 것은 Argo CD뿐. 앱 CI에는 kubeconfig가 없다.</strong><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 B: 3저장소 배포 흐름.</strong> 앱 · 인프라 · GitOps 저장소가 각자의 경로로만 AWS에 닿습니다.</figcaption>
     </figure>
     <h3>발표 자료의 구성도</h3>
     <figure class="diagram diagram--img wide">
@@ -434,7 +434,7 @@
     <section class="deep" aria-labelledby="deep-title">
       <header class="deep__head wide">
         <p class="deep__kicker">이 프로젝트의 핵심</p>
-        <h3 id="deep-title">폐쇄망 전환 — 어려움과 새로 배운 것</h3>
+        <h3 id="deep-title">폐쇄망 전환: 어려움과 새로 배운 것</h3>
       </header>
 
       <h4>경위</h4>
@@ -522,7 +522,7 @@
     <figure class="diagram wide">
       <div class="diagram__scroll" role="group" aria-label="다이어그램 C">
         <svg class="dg dg--c" viewBox="0 64 1150 296" role="img" aria-labelledby="dgC-title dgC-desc">
-          <title id="dgC-title">다이어그램 C — 확정 구조</title>
+          <title id="dgC-title">다이어그램 C: 확정 구조</title>
           <desc id="dgC-desc">사용자 요청은 Route 53을 거쳐 CloudFront로 간다. 정적 콘텐츠는 S3에서, /api/* 경로는 CloudFront 관리형 prefix-list로만 허용된 ALB를 거쳐 WAS Auto Scaling Group(2~6대, t3.small, Tomcat과 Spring)으로 가고, WAS는 Aurora MySQL과 Valkey 캐시를 쓴다. ALB부터 Auto Scaling Group까지가 본인 담당 영역이다.</desc>
           <defs>
             <marker id="dgC-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="dg-head"/></marker>
@@ -567,7 +567,7 @@
           <text x="1072" y="287" text-anchor="middle" class="dg-t">Valkey (캐시)</text>
         </svg>
       </div>
-      <figcaption><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 C — 확정 구조.</strong> 그린으로 표시한 ALB ~ Auto Scaling Group 구간이 담당 영역입니다.</figcaption>
+      <figcaption><span class="diagram__hint">좌우로 밀어서 볼 수 있습니다. </span><strong>다이어그램 C: 확정 구조.</strong> 그린으로 표시한 ALB ~ Auto Scaling Group 구간이 담당 영역입니다.</figcaption>
     </figure>
     <h3>발표 자료의 구성도</h3>
     <figure class="diagram diagram--img wide">
@@ -628,7 +628,7 @@
 
     <h3>그 외</h3>
     <ul class="work-list cols-2 wide">
-      <li>Launch Template 새 버전을 만들어도 반영되지 않던 문제 — Auto Scaling Group이 특정 버전에 고정되어 있었습니다.</li>
+      <li>Launch Template 새 버전을 만들어도 반영되지 않던 문제: Auto Scaling Group이 특정 버전에 고정되어 있었습니다.</li>
       <li>프로젝트 중 AWS 계정 이전으로 전부 0.0.0.0/0이 된 보안그룹을 참조 체인(CloudFront prefix-list → ALB → WAS 8080 → DB 3306 · 캐시 6379)으로 복원했습니다.</li>
       <li>인스턴스가 종료돼도 로그가 사라지지 않도록 Tomcat 로그를 CloudWatch Logs로 수집하고, logrotate를 적용했습니다.</li>
       <li>EBS 기본 암호화를 켰습니다.</li>
@@ -668,19 +668,19 @@
       </article>
       <article class="card">
         <p class="card__meta">2026.04 · 1인</p>
-        <h3>AlgoForge — AI 문제 생성 · 비동기 채점 학습 플랫폼</h3>
+        <h3>AlgoForge: AI 문제 생성 · 비동기 채점 학습 플랫폼</h3>
         <p>즐겨 쓰던 알고리즘 문제 사이트가 문을 닫아 직접 만들었습니다. Spring Boot API가 제출을 RabbitMQ에 발행하고 워커가 Docker 샌드박스에서 채점, FastAPI 서버가 LLM으로 문제 · 힌트를 생성합니다. 배포하려다 막힌 경험이 클라우드 과정을 선택한 계기입니다.</p>
         <ul class="chips" aria-label="사용 스택"><li>Spring Boot</li><li>RabbitMQ</li><li>Docker</li><li>FastAPI</li></ul>
       </article>
       <article class="card">
         <p class="card__meta">2024.11 · 2026.01 · 1인</p>
-        <h3>TeacherForBossAI · Aeterna — Flask 기반 AI 서비스</h3>
+        <h3>TeacherForBossAI · Aeterna: Flask 기반 AI 서비스</h3>
         <p>LangChain과 ChromaDB로 문서 기반 Q&amp;A를 제공하는 Flask 서비스(TeacherForBossAI)와, Spring 백엔드와 통신하며 음식 사진으로 이름·칼로리·영양 비율을 분석하는 Flask AI 서비스(Aeterna)를 만들었습니다.</p>
         <ul class="chips" aria-label="사용 스택"><li>Flask</li><li>LangChain</li><li>ChromaDB</li><li>OpenAI</li></ul>
       </article>
       <article class="card">
         <p class="card__meta">2026.08~ · 1인</p>
-        <h3>Trade — 주식 데이터 수집 · 백테스트 엔진</h3>
+        <h3>Trade: 주식 데이터 수집 · 백테스트 엔진</h3>
         <p>Python(pandas)으로 미국 776종목 × 2,765거래일 일봉을 모아 백테스트하고, 채택한 신호를 증권사 Open API 모의투자 환경에 주문해 원장에 기록했습니다. 전략 채택 기준을 측정 전에 정했고, 시험한 네 가지 방식이 모두 기준에 미달하자 기준을 바꾸지 않고 탈락으로 기록했습니다.</p>
         <ul class="chips" aria-label="사용 스택"><li>Python</li><li>pandas</li><li>pytest</li><li>git worktree</li></ul>
       </article>
