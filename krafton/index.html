@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김동훈 · DevOps / SRE 포트폴리오</title>
+<meta name="description" content="인터넷 경로가 없는 EKS 위에 컨테이너 12개 서비스를 올리고, 확인·승인·구축을 스크립트로 만들어 다섯 번 같은 결과로 다시 세운 기록. PUBG STUDIOS DevOps Engineer 지원 포트폴리오.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="김동훈 · DevOps / SRE 포트폴리오">
+<meta property="og:description" content="인터넷 경로가 없는 EKS 위에 컨테이너 12개 서비스를 올리고, 확인·승인·구축을 스크립트로 만들어 다섯 번 같은 결과로 다시 세웠습니다.">
+<meta property="og:url" content="https://kjbddo.github.io/krafton/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='34' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="#top"><span class="brand__dot" aria-hidden="true"></span><strong>김동훈</strong><span class="brand__role">DevOps / SRE</span></a>
+    <nav id="site-nav" class="site-nav" aria-label="섹션 바로가기">
+      <ul>
+        <li><a href="#fit">요건 대응</a></li>
+        <li><a href="#sre">운영 사이클</a></li>
+        <li><a href="#dxe">Self-service</a></li>
+        <li><a href="#final">최종 프로젝트</a></li>
+        <li><a href="#projects">다른 프로젝트</a></li>
+        <li><a href="#skills">기술·자격</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__tools">
+      <button class="icon-btn theme-btn" type="button">
+        <svg class="theme-btn__moon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="theme-btn__sun" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span class="sr-only">다크 모드로 전환</span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="menu-btn__open" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="menu-btn__close" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 히어로 -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__inner">
+    <div class="hero__lead">
+      <p class="hero__label">DevOps / SRE · PUBG STUDIOS DevOps Engineer 지원</p>
+      <h1 id="hero-title">인터넷 경로가 없는 EKS 위에 <span class="hl">컨테이너 12개 서비스</span>를 올리고, <span class="nb">확인·승인·구축</span>을 스크립트로 만들어 <span class="nb">다섯 번</span> 같은 결과로 다시 세웠습니다</h1>
+      <p class="hero__sub">NAT도 퍼블릭 서브넷도 없는 VPC에서 의료 AI 진료 지원 시스템의 인프라를 Terraform과 eksctl로 세웠습니다. 장애와 문제는 원인을 확정한 뒤 코드와 스크립트로 옮겨, 구축·철거를 5차까지 반복하며 첫 동기화 수정 0건으로 끝냈습니다. 클러스터에 닿는 것은 Argo CD뿐이고, 인프라 적용은 요청자가 아닌 팀원이 승인해야 진행됩니다.</p>
+      <p class="btns">
+        <a class="btn btn--primary" href="#fit">공고 요건 대응표 보기</a>
+        <a class="btn btn--ghost" href="mailto:kjbddo@gmail.com">kjbddo@gmail.com</a>
+        <a class="btn btn--ghost" href="tel:+821074005708">010-7400-5708</a>
+        <a class="btn btn--ghost" href="https://github.com/kjbddo" rel="noopener">GitHub</a>
+        <a class="btn btn--ghost" href="assets/EMR_final_presentation.pdf" rel="noopener">발표 자료 (PDF)</a>
+      </p>
+    </div>
+    <nav class="toc" aria-label="차례">
+      <p class="toc__title">Contents</p>
+      <ol>
+        <li><a href="#fit"><span class="toc__no">01</span><span class="toc__name">공고 요건 ↔ 경험</span></a></li>
+        <li><a href="#sre"><span class="toc__no">02</span><span class="toc__name">같은 장애를 두 번 겪지 않는 운영 사이클</span></a></li>
+        <li><a href="#dxe"><span class="toc__no">03</span><span class="toc__name">운영을 Self-service에 가깝게</span></a></li>
+        <li><a href="#final"><span class="toc__no">04</span><span class="toc__name">최종 프로젝트 구조 · 비용 판단</span></a></li>
+        <li><a href="#projects"><span class="toc__no">05</span><span class="toc__name">다른 프로젝트</span></a></li>
+        <li><a href="#skills"><span class="toc__no">06</span><span class="toc__name">기술 · 자격</span></a></li>
+        <li><a href="#contact"><span class="toc__no">07</span><span class="toc__name">경력 · 교육 · 연락처</span></a></li>
+      </ol>
+    </nav>
+    <dl class="hero__stats">
+      <div><dt>VPC 인터페이스 엔드포인트 <span class="nb">(인터넷 라우트 0)</span></dt><dd>14<small>종</small></dd></div>
+      <div><dt>구축·철거 반복, 첫 동기화 수정 0건</dt><dd>5<small>차</small></dd></div>
+      <div><dt>구축 후 확인 smoke 항목, 5차까지 10/10 통과</dt><dd>10</dd></div>
+      <div><dt>2인 승인 게이트 요청 10건 중 팀원 승인 뒤 진행</dt><dd>8<small>/10</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- 01 공고 요건 ↔ 경험 -->
+<section class="chapter" id="fit" aria-labelledby="fit-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>01</p>
+      <div>
+        <h2 id="fit-title">공고 요건 ↔ 경험</h2>
+        <p class="chapter-sub">PUBG DevOps 팀의 필수 요건과 우대 사항에 제 경험을 하나씩 대응시키고, 공동 작업은 본인 몫을 따로 적었습니다</p>
+      </div>
+    </header>
+    <p class="lead-para">2026년 4월부터 10월까지 베스핀글로벌 멀티클라우드 엔지니어 부트캠프 4기(1,000시간)에서 AWS 3-tier 서비스의 WAS 계층, EKS Helm 차트, NAT 없는 VPC의 프라이빗 EKS 순으로 세웠습니다. 운영 자동화·관측·비용 판단 쪽 경험이 두터워 SRE 파트를 1순위로 두되, 승인 게이트와 값 생성 스크립트처럼 동료가 그대로 쓰는 도구로 환원한 장면은 DXE 파트에도 닿습니다.</p>
+
+    <h3>필수 요건</h3>
+    <div class="table-scroll wide" role="group" aria-label="필수 요건과 경험 대응표">
+      <table class="table--map">
+        <caption>Required</caption>
+        <thead><tr><th scope="col">공고 요건</th><th scope="col">대응하는 경험</th><th scope="col">본인 몫</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">CS 학사 또는 준하는 CS 지식(OS · Network · 알고리즘)</th><td>동국대학교 컴퓨터공학전공(심화), 2026.08 졸업. Tomcat 크래시 루프를 systemd 유닛 의존성(<code>RequiresMountsFor</code> · <code>RestartSec=10</code>)으로 원인 확정. VPC 엔드포인트 private DNS · 보안그룹 체인 · 인터페이스/게이트웨이 엔드포인트 차이를 실제 구성으로 익힘</td><td>전부 본인</td></tr>
+          <tr><th scope="row">Container · Kubernetes · 퍼블릭 클라우드 중 하나 이상 직접 구성·운영</th><td>EMR: NAT 없는 VPC의 프라이빗 EKS 1.34, Helm 차트 1개로 앱 12개, Karpenter 노드풀(general · AI 전용 taint), AWS 관리형 Argo CD, Terraform 운영 계층 · IRSA. PetClinic EKS Helm · NetworkPolicy. Staybook ALB · ASG</td><td>Terraform 운영 계층 · IRSA · Karpenter · 관리형 Argo CD 전환 · GitOps Helm 차트 본인. 네트워크 모듈 · 엔드포인트 최초 12종 · Argo CD 모듈은 팀원</td></tr>
+          <tr><th scope="row">TypeScript · Go · Python 등으로 반복 작업 자동화 · 작은 도구 작성</th><td>Python 운영 스크립트: smoke 10항목, 2인 승인 게이트(이슈 기반, 테스트 18개), 클러스터 부트스트랩 · Argo CD 동기화 대기 · 값 생성 스크립트, 적재 Job 건수 검증. Trade 데이터 파이프라인(테스트 2,094개)</td><td>전부 본인. 배포 파이프라인의 deploy · handoff 스크립트는 팀원이 먼저 만들었고 그 위에 얹음</td></tr>
+          <tr><th scope="row">다뤄보지 않은 영역도 작은 단위로 직접 실행</th><td>NAT 없는 구성을 운영에 적용하기 전에 NAT 라우트를 지운 PoC 클러스터에서 엔드포인트 7종으로 이미지 풀 · 파드 IAM · LLM 호출 · ALB 생성 · 노드 조인 · 추론을 경로별로 통과시킨 뒤 운영 환경에 적용. Bedrock 403은 서명한 본문과 전송 본문을 재현·대조해 원인 확정</td><td>PoC 검증 · 2종(logs · ec2messages) 추가 본인</td></tr>
+          <tr><th scope="row">열린 자세로 생각 · 결과 공유, 동료와 함께 문제 해결</th><td>팀원의 앱 CI PR에 막을 이유 3건과 대안(GitHub App 단기 토큰 · main 전용 environment)을 적고, environment 지정으로 바뀌는 OIDC subject를 파일 · 행 단위로 짚어 AWS 신뢰 정책을 직접 수정. 승인 게이트 요청 10건 중 8건이 팀원 승인 뒤 진행. 값 생성 스크립트를 팀원이 재구축에 재사용(<a href="#dxe">03장</a>)</td><td>리뷰 코멘트 · 신뢰 정책 수정 본인. 단기 토큰 전환의 구현은 팀원. 팀원도 제가 놓친 2건을 짚어 줌</td></tr>
+          <tr><th scope="row">AI 도구로 기술 문서 · 로그 · 코드 · 설정을 정리하고 실행 결과로 검증</th><td>EMR · Trade 개발에 AI 코딩 도구를 썼고, 그 결과는 PoC 실행 결과, smoke 10/10, 경보 임계값 실측 대조(설정 20 · 50건 vs 실측 최대 9 · 28건), 백테스트 재현성 검증으로 확인. 결정과 이유는 날짜별 결정 기록(decision.md)과 런북에 남김</td><td>전부 본인</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">표는 좌우로 밀어서 볼 수 있습니다.</p>
+
+    <h3>우대 사항</h3>
+    <div class="table-scroll wide" role="group" aria-label="우대 사항과 경험 대응표">
+      <table class="table--map">
+        <caption>Preferred</caption>
+        <thead><tr><th scope="col">공고 요건</th><th scope="col">대응하는 경험</th><th scope="col">본인 몫</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">서비스 운영 · 장애 대응 · 운영 이슈 해결</th><td>Staybook WAS 계층을 k6로 부하 실측해 t3.small 2~6대로 결정. /opt 분리 뒤 Tomcat 10초 크래시 루프를 격리 인스턴스에서 재현해 근본 원인을 확정하고 자동 롤백을 건 instance refresh로 무중단 교체. EMR 구축·철거 5차 반복(<a href="#sre">02장</a>)</td><td>WAS 계층 · 로그 · 부하 테스트 본인(4인 중)</td></tr>
+          <tr><th scope="row">로그 · 메트릭 · 알림 관찰성 도구로 서비스 동작 · 문제 파악</th><td>CloudWatch 지표 필터 · 경보(Terraform), 정합성 SQL 뷰 7종을 5분 주기로 수집해 75시간 동안 관측된 샘플 전부 0건 확인, Tomcat 로그 CloudWatch Logs 수집, k6 + Grafana</td><td>경보 · 정합성 뷰 · 수집 계정 본인. Datadog 관측 구성은 팀원</td></tr>
+          <tr><th scope="row">문제 재현 · 원인 정리 · 동료가 이해할 문서화</th><td>Tomcat 크래시 루프 격리 재현, SigV4 서명 본문 재현, 날짜별 결정 기록(결정 · 이유 · 반영 위치), 구축 순서 런북. 고치지 않기로 한 결정에도 이유를 붙임</td><td>전부 본인</td></tr>
+          <tr><th scope="row">반복 운영 작업을 Script · Application · Workflow · Runbook으로 재사용</th><td>smoke · 승인 게이트 · 값 생성 · 동기화 대기 스크립트, 구축 런북, ECR 미러 갱신 정책(월 1회 + 보안 공지), 적재 Job 멱등 처리. 5차 구축 첫 동기화 수정 0건</td><td>전부 본인</td></tr>
+          <tr><th scope="row">게임 · 대규모 온라인 서비스 · 개발자 도구/플랫폼 도메인 관심과 작은 단위 경험</th><td>개발자 도구 쪽: 앱 · 인프라 · GitOps 3저장소 경계, 2인 승인 게이트, 팀원이 재구축에 그대로 쓴 값 생성 스크립트(새 리소스 17개 참조 생성 · 대조). Karpenter와 ECR 미러처럼 노드 프로비저닝 · 이미지 공급 경로를 직접 다룸</td><td>승인 게이트 · 값 생성 본인. 배포 파이프라인 · 앱 CI 자동 PR은 팀원</td></tr>
+          <tr><th scope="row">정보 부족 상황에서 가설 → 다음 액션 → 실행 결과로 검증 · 개선</th><td>403에 "권한이 아니다"는 가설을 세워 바이트 대조로 확정 뒤 수정. 경보 임계값은 실측과 대조한 뒤 표본 부족이라 재조정 보류. 백테스트는 미리 정한 기준에 미달하자 기준을 바꾸지 않고 탈락으로 기록</td><td>전부 본인</td></tr>
+          <tr><th scope="row">새 기술을 빠르게 학습 · 검증해 운영 환경에 적용</th><td>AWS 관리형 Argo CD(EKS Capability) + CodeConnections 전환, Karpenter <code>isolatedVPC</code>, VPC 엔드포인트 private DNS. 1,000시간 과정 6개월 안에 운영 폐쇄망 5차 구축</td><td>관리형 Argo CD 전환 본인 제안 · 적용</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">표는 좌우로 밀어서 볼 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 02 같은 장애를 두 번 겪지 않는 운영 사이클 -->
+<section class="chapter chapter--alt" id="sre" aria-labelledby="sre-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>02</p>
+      <div>
+        <h2 id="sre-title">같은 장애를 두 번 겪지 않는 운영 사이클</h2>
+        <p class="chapter-sub">장애 · 문제 → 원인 확정 → 코드 · 표준 · 자동화로 옮긴 것. 사람의 기억이 아니라 스크립트와 Terraform이 다음 구축을 막아 줍니다</p>
+      </div>
+    </header>
+
+    <p class="lead-para">증상이 익숙해 보여도 원인을 확정할 때까지 손을 떼지 않았고, 확정한 원인은 반드시 코드나 스크립트로 옮겼습니다. 아래 여섯 건은 PoC와 운영 구축, 중간 프로젝트에서 실제로 겪은 것이고, 날짜와 단계를 함께 적었습니다.</p>
+
+    <div class="table-scroll wide" role="group" aria-label="장애와 조치 표">
+      <table class="table--pcs">
+        <caption>Incident → Root cause → Codified</caption>
+        <thead><tr><th scope="col">장애 · 문제</th><th scope="col">원인</th><th scope="col">코드 · 표준 · 자동화로 옮긴 것</th><th scope="col">결과</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row">첫 X-ray 추론이 9분 넘게 응답 없음 <span class="tag tag--ctx">EMR · PoC 09-03</span></th>
+            <td>추론 서비스가 첫 호출 때 모델 가중치를 인터넷에서 받는데 타임아웃이 없었습니다. 초기 데이터 적재 Job은 NAT를 지우기 전에 돌아 드러나지 않았습니다.</td>
+            <td>가중치를 빌드 때 이미지에 굽고, 없으면 가짜 결과로 넘어가지 않고 <code>WeightsMissingError</code>로 즉시 실패. CI에 사전 다운로드 단계 추가.</td>
+            <td>첫 호출이 인터넷에 기대지 않음. 실패가 숨지 않음</td>
+          </tr>
+          <tr>
+            <th scope="row">Karpenter 노드 클래스 준비 4분 40초 지연 <span class="tag tag--ctx">EMR · 운영 7차 09-15</span></th>
+            <td>Karpenter가 런타임에 IAM · Pricing API를 호출하는데 IAM은 글로벌 서비스라 서울 리전에 엔드포인트가 없습니다. <code>isolatedVPC</code> 설정이 빠져 30초 타임아웃이 반복됐습니다(실측).</td>
+            <td><code>isolatedVPC</code> 설정 추가, 인스턴스 프로파일은 Terraform이 미리 만들고 이름만 참조. 로드밸런서 컨트롤러의 WAF · Shield 호출도 같은 이유로 비활성화.</td>
+            <td>노드 준비 지연 해소. 설정은 Terraform 코드에 남음</td>
+          </tr>
+          <tr>
+            <th scope="row">런북의 curl 확인은 통과, 브라우저에서만 403 <span class="tag tag--ctx">EMR · 재구축 09-08</span></th>
+            <td>curl은 Origin 헤더를 보내지 않아 CORS 허용 목록 오류를 잡지 못했습니다. 사람이 손으로 하는 확인이 브라우저 동작을 보장하지 않았습니다.</td>
+            <td>확인 목록 10개를 Python smoke 스크립트로 만들며 처음부터 Origin 헤더를 붙여 검사. 구축 런북의 마지막 단계로 고정.</td>
+            <td>다음 구축(09-09)에서 같은 오류를 smoke가 실제로 잡아냄</td>
+          </tr>
+          <tr>
+            <th scope="row">Tomcat이 약 10초마다 재시작 <span class="tag tag--ctx">Staybook · 07</span></th>
+            <td>앱이 설치된 /opt를 별도 EBS로 분리하자 생긴 크래시 루프. 같은 방법으로 세 번 실패했고 죽는 인스턴스는 SSM에도 붙지 않았습니다. Auto Scaling Group 밖 격리 인스턴스에서 재현해 원인 둘을 확정: 서비스 유닛에 <code>RequiresMountsFor</code>가 없어 마운트 전에 기동, 부팅 중 user-data의 mkfs · 복사와 경합. 재시작 주기 10초가 <code>RestartSec=10</code>과 일치.</td>
+            <td>앱 볼륨을 AMI 스냅샷에서 복원하게 바꾸고 systemd 드롭인으로 마운트 의존성 추가. 재부팅으로 검증한 뒤 자동 롤백을 건 instance refresh로 무중단 교체(07-12).</td>
+            <td>재시작 0회. 루트 · 로그 · 앱 볼륨 3개 분리, 전부 암호화</td>
+          </tr>
+          <tr>
+            <th scope="row">권한이 맞는데 Bedrock 호출이 403 <span class="tag tag--ctx">EMR · llm-gateway</span></th>
+            <td>IAM · 엔드포인트 · 리전이 전부 맞았습니다. botocore가 SigV4로 서명한 본문과 httpx가 실제로 보낸 본문을 재현해 대조하니, <code>json=</code> 인자로 다시 직렬화되면서 구분자 공백이 달라져 서명의 payload hash가 어긋났습니다. 모델 ID의 콜론 · 슬래시도 경로 인코딩이 안 됐습니다.</td>
+            <td>서명한 바이트(<code>body_bytes</code>)를 그대로 전송하고, 모델 ID는 <code>quote(safe="")</code>로 경로 인코딩. 정책은 넓히지 않았습니다.</td>
+            <td>Bedrock 호출 정상. 권한은 2개 액션 그대로, 자격증명은 게이트웨이 한 곳에 IRSA로만</td>
+          </tr>
+          <tr>
+            <th scope="row">상병 코드 50,941건 중 3,347건만 적재, 종료 코드는 0 <span class="tag tag--ctx">EMR · GCP PoC</span></th>
+            <td>적재 직후 COUNT를 확인해 알아챘습니다. 엑셀 CSV에 섞인 CRLF(50,942줄 중 46,300줄)와, 행 끝 백슬래시가 이스케이프로 읽혀 다음 줄이 이어 붙은 것이 원인이었습니다.</td>
+            <td>CR 제거 + <code>ESCAPED BY ''</code>로 적재(CR만 제거하면 50,940건으로 1건 부족). 적재 직후 COUNT 검증을 넣고, 이후 적재 Job은 기준선 건수와 정확히 일치해야 성공, 부분 적재는 실패, 다시 돌려도 결과가 같게 변경.</td>
+            <td>50,941건 일치. 조용한 부분 적재가 실패로 드러남</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">표는 좌우로 밀어서 볼 수 있습니다.</p>
+
+    <h3>SLI · 경보 · 고치지 않기로 한 결정</h3>
+    <p>경보는 거는 것보다 실측과 대조하는 쪽이 어려웠습니다. 고치지 않기로 한 결정에도 이유를 붙여 두어야 다음 사람이 같은 판단을 재현할 수 있습니다.</p>
+    <ol class="strengths wide">
+      <li>
+        <span class="strengths__no">01 · Alert thresholds</span>
+        <h4>경보 임계값을 실측과 대조하고, 표본이 부족해 재조정을 보류했습니다</h4>
+        <p>권한 거부 5분 20건, 감사 거부 5분 50건으로 둔 CloudWatch 경보 임계값을 구축 직후 실측과 대조하니 최댓값이 9건과 28건으로 한 번도 닿지 않았습니다. 바로 낮추면 경보는 울리겠지만 표본이 10시간 남짓이라 대표성이 없다고 보고, 표본이 쌓일 때까지 재조정을 미루고 설명 문구에 뒤바뀌어 적힌 임계값만 먼저 바로잡았습니다. 보류한 이유는 결정 기록에 남겼습니다.</p>
+      </li>
+      <li>
+        <span class="strengths__no">02 · Integrity SLI</span>
+        <h4>정합성 위반 7종을 5분 주기로 세어, 75시간 동안 관측된 샘플 전부에서 0건을 확인했습니다</h4>
+        <p>완료인데 결과 없음, 고아 결과, 이력 누락, 처방 · 상병 중복 코드, 30분 이상 멈춘 작업, 본문 없는 완료 등 위반 7종의 건수만 내는 SQL 뷰를 만들어 5분 주기로 수집했습니다. 수집 계정은 뷰 3개의 SELECT만 허용한 읽기 전용 계정입니다. 수집 시작 뒤 데이터가 있는 75시간 동안 관측된 샘플 전부에서 7종 모두 0건이었습니다. 일부 주기 누락이 있어 "샘플 전부에서"라는 범위를 붙여 적습니다.</p>
+      </li>
+    </ol>
+
+    <h3>구축 반복의 수치</h3>
+    <ol class="result wide">
+      <li>
+        <p class="result__label">09-07 · First prod build</p>
+        <p class="result__num">첫 동기화 약 2시간</p>
+        <p class="result__txt">첫 동기화에서 6건을 고치느라 걸린 시간입니다.</p>
+      </li>
+      <li>
+        <p class="result__label">09-08 · Rebuild</p>
+        <p class="result__num">대기 15분</p>
+        <p class="result__txt">수정을 전부 코드에 반영한 뒤의 첫 동기화 구간입니다.</p>
+      </li>
+      <li>
+        <p class="result__label">09-11 · 5th build</p>
+        <p class="result__num">첫 동기화 수정 0건</p>
+        <p class="result__txt">smoke 10/10 통과, terraform plan 변경 없음.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- 03 운영을 Self-service에 가깝게 -->
+<section class="chapter" id="dxe" aria-labelledby="dxe-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>03</p>
+      <div>
+        <h2 id="dxe-title">운영을 Self-service에 가깝게</h2>
+        <p class="chapter-sub">클러스터에 닿는 것은 Argo CD뿐. 확인 · 승인 · 값 생성은 사람이 아니라 스크립트가 하고, 동료가 그대로 씁니다</p>
+      </div>
+    </header>
+
+    <p class="lead-para">저장소를 앱 · 인프라 · GitOps 셋으로 나눴습니다. 앱 CI에는 kubeconfig가 없고, 인프라 CI는 AWS OIDC만 가지며, 변경을 EKS에 반영하는 것은 AWS 관리형 Argo CD 하나입니다. 개발자가 클러스터를 만지지 않아도 배포가 되고, 누가 무엇을 바꿨는지 Git 이력에 남습니다.</p>
+
+    <ol class="flow wide">
+      <li>
+        <p class="flow__k">App repo</p>
+        <h4>이미지 게시 + GitOps PR까지만</h4>
+        <p>CI는 이미지를 빌드해 ECR에 게시하고, GitOps 저장소에 태그 변경 PR을 올리는 데서 끝납니다. 자동 PR은 팀원이 구현했고, 저는 수명이 긴 개인 토큰이 환경 격리 없이 있는 점을 짚어 GitHub App 단기 토큰과 main 전용 environment를 제안했습니다.</p>
+      </li>
+      <li>
+        <p class="flow__k">GitOps repo</p>
+        <h4>Helm 차트 1개로 앱 12개, Argo CD가 읽어 반영</h4>
+        <p>app-of-apps로 앱 12개를 정의하고, AWS 관리형 Argo CD가 CodeConnections로 읽어 EKS에 반영합니다. 이미지는 CRITICAL CVE 게이트를 통과해야 배포됩니다.</p>
+      </li>
+      <li>
+        <p class="flow__k">Infra repo</p>
+        <h4>OIDC로 plan 검증, 2인 승인 뒤 적용</h4>
+        <p>GitHub Actions가 OIDC로 Terraform plan을 검증하고 저장된 plan을 배포합니다. 적용은 요청자가 아닌 팀원이 승인해야 진행되는 게이트를 거칩니다.</p>
+      </li>
+    </ol>
+    <p class="callout wide">클러스터에 닿는 것은 Argo CD뿐. 앱 CI에는 kubeconfig가 없다.<span>클러스터 API는 private endpoint만 열고, 운영자는 인바운드 0인 Bastion에 SSM Session Manager로만 접속합니다.</span></p>
+
+    <h3>동료가 그대로 쓰는 도구 · 표준</h3>
+    <ul class="work-list cols-2 wide">
+      <li><strong>2인 승인 게이트(Python, 테스트 18개).</strong> 인프라 적용은 실행 한 번이 요청이자 승인이어서 권한이 있으면 혼자 운영 환경을 바꿀 수 있었고, GitHub 필수 리뷰어는 유료 플랜 전용이었습니다. 팀원들과의 커피챗 논의에서 나온 안을 제가 이슈 기반 승인 스크립트로 만들었습니다. 적용을 요청하면 이슈가 열리고, 요청자가 아닌 등록된 팀원이 승인 코멘트를 달 때까지 기다립니다. 자기 승인 불가, 거부 또는 60분 초과면 중단. 사흘간 요청 10건 중 8건이 팀원 승인 뒤 진행되고 2건은 제가 취소했습니다.</li>
+      <li><strong>smoke 10항목.</strong> 구축한 사람이 누구든 같은 확인을 하도록 확인 목록 10개를 Python 스크립트로 고정했습니다. Origin 헤더를 붙여 CORS까지 검사하고, 5차 구축까지 10/10이었습니다.</li>
+      <li><strong>부트스트랩 · 동기화 대기 · 값 생성.</strong> SSM을 거쳐 Bastion으로 허용 목록의 kubectl 명령만 보내는 부트스트랩, Argo CD 동기화 대기, 새 리소스 참조를 생성해 대조하는 값 생성 스크립트를 만들었습니다. 09-19 재구축에서 팀원이 값 생성 스크립트로 새 리소스 17개 참조를 생성·대조했다고 PR 본문에 적었습니다.</li>
+      <li><strong>런북 · 결정 기록.</strong> 구축 순서 런북과, 결정 · 이유 · 반영 위치를 날짜별로 남긴 decision.md를 유지했습니다. 바꾸지 않기로 한 것(경보 임계값 보류)도 이유와 함께 적어 동료가 같은 판단을 재현할 수 있게 했습니다.</li>
+      <li><strong>CVE 게이트.</strong> 이미지는 CRITICAL CVE 게이트를 통과해야 배포됩니다. 베이스 이미지의 번들 CVE가 게이트를 막았을 때는 예외를 두는 대신 runner 스테이지에서 npm · corepack을 제거해 취약 레이어 자체를 없앴습니다.</li>
+      <li><strong>ECR 미러 갱신 정책.</strong> 노드가 public ECR · ghcr · Docker Hub에 닿지 못해 공개 이미지와 Helm 차트를 ECR로 미러했습니다. 미러 과정에서 다이제스트가 바뀌어 ImagePullBackOff가 나자 태그로만 당기게 고쳤고, 자동 패치가 안 되므로 월 1회와 보안 공지 때 갱신, CI에서 버전 대조, ECR 지속 스캔을 정책으로 두었습니다.</li>
+    </ul>
+
+    <h3>동료와 함께 고친 것</h3>
+    <p>팀원이 이미지 게시 뒤 GitOps 저장소에 태그 변경 PR을 자동으로 여는 CI를 올렸을 때, 방향(변경은 자동 PR, 병합은 사람)은 맞다고 먼저 적고 막을 이유 3건을 냈습니다. 수명이 긴 개인 토큰이 환경 격리 없이 저장소 시크릿에 있는 것, 앞선 실행이 영구 실패하면 이후 main push가 모두 막히는 것, 사람이 PR 표식을 지우면 이후 제안이 교착하는 것입니다. 대안으로 GitHub App 단기 토큰과 main 한정 environment를 제시했고, 개인 토큰을 유지하더라도 환경 격리는 필수라는 최소 조건도 적었습니다. 단기 토큰 전환의 구현은 팀원의 작업입니다.</p>
+    <p>재리뷰에서는 environment를 지정하면 AWS가 보는 신원 값(OIDC subject)이 바뀌어 역할 신뢰 정책에서 거부될 것을 파일 · 행 단위로 짚었고, 신뢰 정책에 subject 2종을 추가하는 수정은 제가 직접 올렸습니다. 팀원도 제가 놓친 2건(런북 예시의 subject 수, 재구축 첫 실행 때 이미지 8개 전부 게시)을 짚어 주었고, 저는 팀원이 제안한 구조대로 가드 테스트 3개를 올렸습니다. 로그에서 환자 식별자를 빼는 작업에서도 제가 앱 로그를 고치고 팀원이 수집기 필터를 넣은 뒤, 오류 번호 · 작업 ID · 코드 위치까지 사라진 문제를 팀원이 제기해 구조화 진단 객체로 절충했습니다.</p>
+  </div>
+</section>
+
+<!-- 04 최종 프로젝트 구조 · 비용 판단 -->
+<section class="chapter chapter--alt" id="final" aria-labelledby="final-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>04</p>
+      <div>
+        <h2 id="final-title">최종 프로젝트 구조 · 비용 판단</h2>
+        <p class="chapter-sub">의료 AI 진료 지원 시스템(EMR) · NAT 없는 VPC의 프라이빗 EKS 인프라와 GitOps 배포 체계</p>
+      </div>
+    </header>
+
+    <dl class="meta wide">
+      <div><dt>기간</dt><dd>2026.08.26 ~ 2026.10.02 (최종 발표 1위)</dd></div>
+      <div><dt>인원</dt><dd>4인</dd></div>
+      <div><dt>과제</dt><dd>비트컴퓨터 연계 과제 · 베스핀글로벌 멀티클라우드 엔지니어 부트캠프 4기 최종 프로젝트</dd></div>
+      <div><dt>저장소</dt><dd>앱 · 인프라 · GitOps 3개(비공개, 요청 시 열람)</dd></div>
+      <div class="meta__role"><dt>Role</dt><dd>AWS 인프라 설계 · Terraform 운영 계층 · IRSA · 폐쇄망 PoC 검증 · GitOps 배포 체계 · 운영 자동화 · 백엔드 · AI 서비스 개발 · GCP DR(팀원과 공동)
+        <small>기여는 커밋 기준(2026-09-17, 병합 제외)으로 앱 저장소 대부분, 인프라 · GitOps 저장소 7~8할입니다. 본인 몫과 팀원 몫은 아래에 따로 적었습니다.</small></dd></div>
+    </dl>
+
+    <p class="lead-para">X-ray 분석과 처방 추천 AI를 결합한 진료 지원 시스템입니다. 컨테이너 12개(Next.js, Spring Boot, FastAPI AI 서비스, MySQL, Redis, RabbitMQ, ArangoDB 등)를 AWS EKS에 배포했고, GCP에 DR을 두는 멀티클라우드 과제였습니다. 환자 정보를 다루는 서비스라 인터넷으로 나가는 경로를 NAT 없이 막아야 했고, NAT를 빼면 이미지 풀 · 파드 IAM · LLM 호출 · 노드 조인이 각각 다른 AWS API를 부르며 경로 하나가 빠지면 증상은 타임아웃뿐입니다.</p>
+
+    <h3>확정한 구조</h3>
+    <p>퍼블릭 서브넷과 NAT가 없는 VPC에서 외부 요청은 CloudFront · WAF에서 VPC Origin으로 내부 ALB를 거쳐 프라이빗 EKS에 닿습니다. RDS Multi-AZ · ElastiCache · Amazon MQ · EFS는 데이터 서브넷에 두어 보안그룹 체인으로만 허용했고, AWS 서비스는 인터페이스 엔드포인트 14종과 S3 게이트웨이로, LLM은 Bedrock 엔드포인트로 호출합니다. 파드 권한은 IRSA로 서비스어카운트별 최소 권한을 받고, 시크릿은 ExternalSecrets가 Secrets Manager의 정해진 prefix만 읽습니다.</p>
+
+    <div class="diagrams wide">
+      <figure class="diagram diagram--img diagram--full">
+        <a href="assets/arch_emr.jpg" target="_blank" rel="noopener"><img src="assets/arch_emr.jpg" alt="AWS 메인 인프라 구성도: NAT 없는 VPC, 가용 영역 3개, EKS 노드 풀, VPC 엔드포인트 14종, 데이터 계층, Datadog PrivateLink, DMS로 GCP 복제" loading="lazy"></a>
+        <figcaption><strong>AWS 메인 인프라(발표 자료).</strong> CloudFront · WAF → VPC Origin → 내부 ALB → 프라이빗 EKS. 가용 영역 3개에 VPC 엔드포인트 14종, 데이터 계층은 RDS · ElastiCache · Amazon MQ · EFS. 관측은 Datadog PrivateLink, DR 복제는 DMS → Cloud SQL. 그림을 누르면 원본 크기로 열립니다.</figcaption>
+      </figure>
+      <figure class="diagram diagram--img">
+        <a href="assets/arch_gcp.jpg" target="_blank" rel="noopener"><img src="assets/arch_gcp.jpg" alt="GCP DR 인프라 구성도: HA VPN, GKE, Cloud SQL 복제본, Memorystore, Filestore, Artifact Registry, Developer Connect" loading="lazy"></a>
+        <figcaption><strong>GCP DR 인프라(Pilot Light, 팀원과 공동).</strong> 평시에는 VPC · HA VPN · Cloud SQL 복제만 켜 두고, GKE · Redis · Filestore는 DR 선언 뒤 만듭니다. RDS → Cloud SQL 복제 PoC에서 변경 반영 지연 p95 0.218초를 확인했습니다.</figcaption>
+      </figure>
+      <figure class="diagram diagram--img">
+        <a href="assets/arch_cluster.jpg" target="_blank" rel="noopener"><img src="assets/arch_cluster.jpg" alt="클러스터 안 서비스 구조: 내부 ALB에서 frontend, spring-boot, xraygraph로 나뉘고 RabbitMQ 큐로 prescription, validation, certificate, llm-gateway가 연결된다" loading="lazy"></a>
+        <figcaption><strong>클러스터 안 서비스 구조.</strong> 경로 3개(/, /api, /storage)로 나뉘고, AI 작업은 RabbitMQ 큐로 넘어가 202 응답 뒤 폴링합니다. 모든 LLM 호출은 llm-gateway 한 곳을 거쳐 Bedrock으로 나갑니다.</figcaption>
+      </figure>
+    </div>
+
+    <h3>결정과 감수한 것</h3>
+    <p>인프라 결정은 얻는 것과 함께 잃는 것을 적어 두어야 다음 사람이 뒤집을 수 있습니다. "동일한 비용으로 더 많이 수용"하려면 먼저 비용이 어디서 나가는지 계산되어 있어야 합니다.</p>
+    <div class="table-scroll wide" role="group" aria-label="결정 표">
+      <table class="table--decision">
+        <caption>Decisions</caption>
+        <thead><tr><th scope="col">결정</th><th scope="col">이유</th><th scope="col">감수한 것</th><th scope="col">얻은 것</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">NAT 없는 VPC <span class="tag tag--team">팀 결정</span></th><td>환자 정보를 다루는 서비스. LLM 상류를 Bedrock으로 바꾼 뒤 NAT가 할 일이 없어짐</td><td>"NAT 제거 = 절감"은 계산하니 틀렸음. 인터페이스 엔드포인트는 AZ별 ENI당 과금이라 14종 × 3AZ = ENI 42개, 월 약 414달러로 NAT보다 비쌈. 비용을 적어 두고 팀이 보안을 이유로 감수</td><td>인터넷 라우트 0. 나가는 경로가 전부 엔드포인트 정책과 IAM으로 통제됨</td></tr>
+          <tr><th scope="row">AWS 관리형 Argo CD + CodeConnections <span class="tag">본인 제안</span></th><td>자체 호스팅 Argo CD는 VPC 안에서 GitHub를 읽을 수 없음(GitHub에는 VPC 엔드포인트가 없음). PoC는 kubectl apply로 검증해 드러나지 않았던 구멍</td><td>동기화 타임아웃 120초 고정. 수 분 걸리는 적재 Job을 동기화 훅에서 빼 일반 Job으로 변경</td><td>미러 이미지 3종과 토큰 갱신 CronJob 삭제. 클러스터에 닿는 것은 Argo CD뿐</td></tr>
+          <tr><th scope="row">공개 레지스트리 이미지 · Helm 차트를 ECR로 미러</th><td>노드가 public ECR · ghcr · Docker Hub에 닿지 못함</td><td>미러 과정에서 다이제스트가 바뀌어 ImagePullBackOff. 태그로만 당기게 수정. 자동 패치가 안 되므로 월 1회와 보안 공지 때 갱신, CI에서 버전 대조</td><td>폐쇄망 안에서 이미지 공급 경로 확보, ECR 지속 스캔</td></tr>
+          <tr><th scope="row">모델 가중치를 이미지에 굽고 없으면 즉시 실패 <span class="tag">본인</span></th><td>첫 호출 때 인터넷에서 가중치를 받으려다 9분 넘게 멈춤. 가짜 결과로 넘어가는 폴백은 의료 도메인에서 틀린 추론을 만듦</td><td>빌드 시점에 가중치를 받아야 하므로 CI에 사전 다운로드 단계 추가</td><td>첫 호출이 인터넷에 기대지 않음. 실패가 조용히 숨지 않음</td></tr>
+          <tr><th scope="row">Karpenter <code>isolatedVPC</code> · 인스턴스 프로파일 사전 생성 <span class="tag">본인</span></th><td>Karpenter가 호출하는 IAM · Pricing은 글로벌 서비스라 서울 리전에 엔드포인트가 없음</td><td>인스턴스 프로파일은 Terraform이 미리 만들고 이름만 참조. 로드밸런서 컨트롤러의 WAF · Shield 호출도 비활성화(WAF는 CloudFront에)</td><td>30초 타임아웃 반복으로 4분 40초 늦던 노드 클래스 준비가 정상화. 노드풀은 general · AI 전용 taint로 분리, 파드는 HPA CPU 70%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">표는 좌우로 밀어서 볼 수 있습니다.</p>
+
+    <h3>본인 몫과 팀원 몫</h3>
+    <p>공동 제작물이라 본인 몫을 따로 적습니다. 문서로 된 담당표는 없었고 커밋과 PR 기록에서 역산한 것입니다.</p>
+    <ul class="pair wide">
+      <li>
+        <p class="pair__k">Mine</p>
+        <ul>
+          <li>AWS 인프라 설계, Terraform 운영 계층 · IRSA 설계</li>
+          <li>NAT 라우트를 지운 PoC 클러스터에서 엔드포인트 7종 검증, 운영 엔드포인트 2종(logs · ec2messages) 추가</li>
+          <li>AWS 관리형 Argo CD + CodeConnections 전환 제안 · 적용, GitOps Helm 차트(앱 12개)</li>
+          <li>운영 자동화: 2인 승인 게이트 · smoke · 값 생성 · 동기화 대기 · 부트스트랩 스크립트, CVE 게이트, CloudWatch 경보</li>
+          <li>구축 · 철거 5차 반복, 런북 · 결정 기록</li>
+          <li>Spring Boot 백엔드(역할 기반 접근 통제, 행 잠금, 접근 감사 로그, 테스트 270개), AI 서비스(llm-gateway · 검증 워커 · X-ray 유사 사례 검색), 적재 Job 건수 검증, 정합성 뷰 7종</li>
+          <li>GCP DR(Pilot Light) 설계는 팀원과 공동</li>
+        </ul>
+      </li>
+      <li>
+        <p class="pair__k">Teammates</p>
+        <ul>
+          <li>네트워크 모듈, VPC 엔드포인트 최초 12종, Bastion, CloudFront / WAF, Argo CD 모듈</li>
+          <li>브랜치 통합, 배포 파이프라인(deploy · handoff · validate 스크립트), 앱 CI → GitOps 자동 PR, GitHub App 단기 토큰 전환 구현, Datadog 관측 구성</li>
+          <li>데이터 모듈 초안</li>
+          <li>통합 과정에서 제 운영 계층 브랜치의 결함 2건(EFS 마운트 타깃 반복 키, CloudFront 캐시 정책 ID)을 팀원이 찾아 고침</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="chips wide" aria-label="사용 스택">
+      <li>AWS VPC · 엔드포인트 · EKS · Karpenter · ALB · CloudFront · WAF</li>
+      <li>RDS · ElastiCache · Amazon MQ · EFS · Bedrock</li>
+      <li>IAM/IRSA · SSM · CloudWatch</li>
+      <li>Terraform · eksctl · Helm · Argo CD</li>
+      <li>GitHub Actions(OIDC)</li>
+      <li>Python · Spring Boot · FastAPI</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 다른 프로젝트 -->
+<section class="chapter" id="projects" aria-labelledby="projects-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>05</p>
+      <div>
+        <h2 id="projects-title">다른 프로젝트</h2>
+        <p class="chapter-sub">부하 실측으로 사양을 정한 3-tier, Helm 차트로 다시 세운 3-tier, 그리고 Python 파이프라인</p>
+      </div>
+    </header>
+
+    <div class="cards wide">
+      <article class="card card--img">
+        <div>
+          <p class="card__meta">2026.06.30 ~ 07.14 · <span class="ko">4인 · 기여 25% · 베스핀글로벌 멀티클라우드 엔지니어 부트캠프 중간 프로젝트</span></p>
+          <h3>Staybook: AWS 3-tier 숙박 예약 서비스의 WAS 계층</h3>
+          <p>과제 요구는 WEB-WAS-DB 3-tier였습니다. 팀은 Classic 3-tier와 Web 계층을 없앤 CDN 구조를 둘 다 세워 비교한 뒤 CDN 구조(CloudFront/S3 + ALB → WAS ASG → Aurora MySQL · Valkey)로 확정했습니다. 저는 ALB · Target Group · Launch Template · Auto Scaling Group · 보안그룹의 WAS 계층과 로그, 부하 테스트를 맡았습니다.</p>
+          <p>WAS를 t2.nano → t3.nano → t3.small로 바꿔 가며 8회 이상 구축하고 k6 · CloudWatch · Grafana로 측정했습니다. t3.nano는 초당 50건에서 메모리 90%대, t3.small은 초당 150건에서 50%대였습니다. 사양을 더 올리는 대신 t3.small 2대로 시작해 CPU 60% 목표 추적으로 최대 6대까지 늘리기로 했고, 워밍업 300초는 콜드스타트 실측으로 정했습니다. 계정 이전으로 전부 0.0.0.0/0이 된 보안그룹은 참조 체인(CloudFront prefix-list → ALB → WAS 8080 → DB 3306 · 캐시 6379)으로 복원했고, Tomcat 로그는 인스턴스 종료 시 소실되지 않도록 CloudWatch Logs로 수집했습니다.</p>
+          <dl class="kv">
+            <div><dt>SLO</dt><dd>p95 500ms 이하 · 에러율 1% 미만 · CPU 70% 미만</dd></div>
+            <div><dt>Sizing</dt><dd>t3.small 2~6대, CPU 60% 추적</dd></div>
+            <div><dt>Rollout</dt><dd>자동 롤백 instance refresh</dd></div>
+          </dl>
+          <ul class="chips" aria-label="사용 스택"><li>EC2 · ALB · Auto Scaling · EBS</li><li>CloudWatch Logs · SSM</li><li>Linux systemd</li><li>k6 · Grafana</li></ul>
+        </div>
+        <figure>
+          <a href="assets/arch_staybook.jpg" target="_blank" rel="noopener"><img src="assets/arch_staybook.jpg" alt="Staybook 3-tier 구성도: Route 53에서 CloudFront, ALB, WAS Auto Scaling Group, ElastiCache와 Aurora Multi-AZ로 이어진다" loading="lazy"></a>
+          <figcaption>Staybook 전체 구성(발표 자료). 제가 맡은 WAS 계층은 가운데 ALB · ASG · 보안그룹 체인입니다. 그림을 누르면 원본 크기로 열립니다.</figcaption>
+        </figure>
+      </article>
+
+      <article class="card">
+        <p class="card__meta">2026.07.29 ~ 08.06 · <span class="ko">1인</span></p>
+        <h3>Spring PetClinic 3-tier on EKS: Helm 차트와 계층 격리</h3>
+        <p>콘솔로 세운 Staybook의 3-tier가 재현되지 않는 점이 아쉬워 Kubernetes로 다시 세웠습니다. nginx(Web) · Spring Boot(App) · RDS MySQL(Data) 3계층 Helm 차트, Web 노드그룹 taint, App HPA 2~6, 멀티스테이지 Dockerfile.</p>
+        <p>NetworkPolicy만으로는 "Web → App만 허용"이 안 됐습니다. ALB → Web 트래픽은 파드 라벨이 없는 외부 IP에서 오고, App → RDS는 클러스터 밖이라 셀렉터로 잡히지 않습니다. 그래서 경계마다 두 겹을 겹쳤습니다. Internet ↔ Web은 ALB 보안그룹 + ipBlock 정책, Web ↔ App은 라벨 정책 + 노드그룹 · 서브넷 분리, App ↔ Data는 egress 정책 + RDS 보안그룹 체이닝.</p>
+        <ul class="chips" aria-label="사용 스택"><li>EKS</li><li>Helm</li><li>NetworkPolicy</li><li>HPA</li><li>eksctl</li></ul>
+      </article>
+
+      <article class="card">
+        <p class="card__meta">2026.08.05 ~ 08.28 · <span class="ko">1인</span></p>
+        <h3>Trade: 주식 데이터 수집 · 백테스트 · 모의투자 주문 (Python)</h3>
+        <p>미국 776종목 × 2,765거래일 일봉을 모아 parquet로 적재하는 파이프라인과, 거래소 캘린더 대비 빠진 캔들 · 50% 초과 변동 · 거래량 0 연속 3일을 검출하는 검증을 만들었습니다. 백테스트 엔진은 두 번 실행한 자산곡선 2,765지점이 완전히 같은지로 재현성을 검증했습니다.</p>
+        <p>증권사 Open API 모의투자 환경에 지정가 주문을 내고 SQLite 원장에 기록합니다. 같은 신호가 두 번 제출되지 않도록 UNIQUE 제약과 <code>BEGIN IMMEDIATE</code> 한 트랜잭션으로 멱등성을 DB에 맡겼고, 주문은 재시도하지 않고 조회만 재시도해 응답을 잃어도 원장을 맞춥니다. 전략 채택 기준을 측정 전에 정했고, 시험한 네 가지 가중 방식이 모두 기준에 미달하자 기준을 바꾸지 않고 탈락으로 기록했습니다.</p>
+        <dl class="kv">
+          <div><dt>Tests</dt><dd>2,094개</dd></div>
+          <div><dt>Data</dt><dd>776종목 × 2,765거래일</dd></div>
+          <div><dt>Ledger</dt><dd>SQLite, UNIQUE 제약</dd></div>
+        </dl>
+        <ul class="chips" aria-label="사용 스택"><li>Python</li><li>pandas</li><li>SQLite</li><li>pytest</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 기술·자격 -->
+<section class="chapter chapter--alt chapter--last" id="skills" aria-labelledby="skills-title">
+  <div class="chapter__inner">
+    <header class="chapter-head wide">
+      <p class="chapter-no"><span>Chapter</span>06</p>
+      <div>
+        <h2 id="skills-title">기술 · 자격</h2>
+        <p class="chapter-sub">프로젝트에서 직접 구성하고 운영한 것만 적었습니다</p>
+      </div>
+    </header>
+
+    <div class="skills wide">
+      <section class="skills__main" aria-labelledby="sk-used">
+        <h3 id="sk-used">Skills</h3>
+        <dl class="skill-list">
+          <div><dt>AWS</dt><dd>VPC · VPC 엔드포인트 · EKS · Karpenter · ALB · CloudFront · WAF · RDS · ElastiCache · Amazon MQ · EFS · Bedrock · IAM/IRSA · SSM · CloudWatch</dd><span class="lv lv--hi">상</span></div>
+          <div><dt>IaC</dt><dd>Terraform(모듈 8개 · 환경당 단일 state) · eksctl</dd><span class="lv lv--hi">상</span></div>
+          <div><dt>Kubernetes · GitOps</dt><dd>Helm · Argo CD(AWS 관리형) · Karpenter · HPA · NetworkPolicy · ExternalSecrets</dd><span class="lv lv--hi">상</span></div>
+          <div><dt>CI/CD</dt><dd>GitHub Actions(OIDC) · 이미지 CVE 게이트 · 2인 승인 게이트 · ECR 미러</dd><span class="lv lv--mid">중</span></div>
+          <div><dt>Linux · 운영</dt><dd>Linux systemd(<code>RequiresMountsFor</code> · 드롭인) · Shell · SSM Session Manager · instance refresh · 런북</dd><span class="lv lv--hi">상</span></div>
+          <div><dt>관측 · 측정</dt><dd>CloudWatch 지표 필터 · 경보 · Datadog · k6 · Grafana · 정합성 SLI 뷰</dd><span class="lv lv--mid">중</span></div>
+          <div><dt>Python</dt><dd>운영 스크립트(부트스트랩 · 동기화 대기 · smoke · 승인 게이트 · 값 생성) · FastAPI · pandas · pytest</dd><span class="lv lv--hi">상</span></div>
+          <div><dt>Java</dt><dd>Spring Boot(JPA · Spring Security · RabbitMQ 워커 · 테스트 270개) · Tomcat</dd><span class="lv lv--hi">상</span></div>
+        </dl>
+        <p class="legend">수준 표기: 상 = 프로젝트에서 설계 · 구축 · 운영까지 직접 수행 / 중 = 프로젝트에서 구성 · 활용</p>
+      </section>
+      <section class="skills__side" aria-labelledby="sk-cert">
+        <h3 id="sk-cert">Certifications</h3>
+        <ul class="plain-list">
+          <li>AWS Certified Solutions Architect Associate <span class="when">2026.10</span></li>
+          <li>OPIc IH (영어) <span class="when">2026.10</span></li>
+          <li>SQLD <span class="when">2025.12</span></li>
+        </ul>
+        <h3 id="sk-next" style="margin-top:40px">Next</h3>
+        <ul class="plain-list">
+          <li>Kubernetes 자격증</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 07 경력 · 교육 · 연락처 -->
+<footer class="site-footer" id="contact" aria-labelledby="contact-title">
+  <div class="site-footer__inner">
+    <header class="chapter-head">
+      <p class="chapter-no"><span>Chapter</span>07</p>
+      <div>
+        <h2 id="contact-title">경력 · 교육 · 연락처</h2>
+      </div>
+    </header>
+    <div class="site-footer__cols">
+      <section aria-labelledby="career-title">
+        <h3 id="career-title">Career</h3>
+        <ul class="plain-list">
+          <li>휴몬랩코딩아카데미 · 코딩 강사(계약직) <span class="when">2025.07 ~ 현재</span></li>
+          <li>티처포보스 · 백엔드 개발자(계약직): Flask AI 서버, LangChain RAG <span class="when">2024.09 ~ 2024.12</span></li>
+          <li>비욘드코딩 · 코딩 강사(계약직) <span class="when">2023.09 ~ 2025.10</span></li>
+        </ul>
+      </section>
+      <section aria-labelledby="edu-title">
+        <h3 id="edu-title">Education</h3>
+        <ul class="plain-list">
+          <li>베스핀글로벌 멀티클라우드 엔지니어 부트캠프 4기 · 우수 수료생 · 최종 프로젝트 발표 1위 <span class="when">2026.04 ~ 2026.10 (1,000시간, 과제 의뢰 비트컴퓨터)</span></li>
+          <li>동국대학교 컴퓨터공학전공(심화) <span class="when">2019.03 ~ 2026.08</span></li>
+        </ul>
+      </section>
+      <section aria-labelledby="ct-title">
+        <h3 id="ct-title">Contact</h3>
+        <ul class="plain-list contact">
+          <li><span class="contact__k">이메일</span><a href="mailto:kjbddo@gmail.com">kjbddo@gmail.com</a></li>
+          <li><span class="contact__k">전화</span><a href="tel:+821074005708">010-7400-5708</a></li>
+          <li><span class="contact__k">GitHub</span><a href="https://github.com/kjbddo" rel="noopener">github.com/kjbddo</a></li>
+          <li><span class="contact__k">발표 자료</span><a href="assets/EMR_final_presentation.pdf" rel="noopener">EMR 최종 발표 (PDF)</a></li>
+        </ul>
+        <div class="repos">
+          <p>EMR 저장소 3개는 비공개입니다(요청 시 열람): <code>HappyGladDelightedJoy/bitcomputer-emr</code> · <code>-infra</code> · <code>-gitops</code></p>
+        </div>
+      </section>
+    </div>
+    <p class="colophon">이 페이지는 정적 HTML · CSS로 작성해 GitHub Pages에 배포했습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
